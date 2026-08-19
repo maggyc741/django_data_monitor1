@@ -7,9 +7,13 @@ from django.http import HttpResponse
 import requests
 from django.conf import settings
 
+from django.contrib.auth.decorators import login_required
 
 #Cree un diccionario data con el título del Dashboard.
 #Pase el diccionario como contexto al renderizar la plantilla index.html.
+
+@login_required
+
 def index(request):
 
 	#Realice una solicitud GET a la API de JSONPlaceholder para obtener una lista de publicaciones.

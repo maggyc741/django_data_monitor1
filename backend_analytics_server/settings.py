@@ -144,3 +144,10 @@ CSRF_TRUSTED_ORIGINS = [
 ALLOWED_HOSTS = [
   "*",
 ]
+
+
+# Fallo: acceso sin autenticación
+LOGIN_URL = '/login/'
+
+# Éxito: luego de autenticación exitosa
+LOGIN_REDIRECT_URL = '/'
