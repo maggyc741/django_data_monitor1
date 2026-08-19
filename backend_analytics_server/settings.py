@@ -131,3 +131,16 @@ MAILERS = {
 
 #Agregue la constante API_URL con la URL de la API JSONPlaceholder.
 API_URL = "https://jsonplaceholder.typicode.com/posts"
+
+
+#CSRF_TRUSTED_ORIGINS sirve para permitir solicitudes de origen cruzado (CORS) desde dominios específicos. Esto es útil cuando se trabaja con aplicaciones web que consumen APIs desde diferentes dominios.
+CSRF_TRUSTED_ORIGINS = [
+  "https://*.app.github.dev", # Solo si utiliza Codespaces
+  "https://localhost:8000",
+  "http://127.0.0.1:8000"
+]
+
+#ALLOWED HOSTS es una lista de nombres de host o direcciones IP que Django considera válidos para servir la aplicación. Esto ayuda a prevenir ataques de encabezado HTTP Host. En este caso, se permite cualquier host utilizando el comodín "*".
+ALLOWED_HOSTS = [
+  "*",
+]

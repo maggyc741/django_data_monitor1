@@ -19,9 +19,14 @@ def index(request):
 
 	#Agregue la entrada total_responses al diccionario data.
 	total_responses = len(posts)
+	#Limite a 10 las publicaciones que se mostrarán en la tabla.
+	table_posts = posts[:10]
 
 	data = {
 		'title': "Landing Page' Dashboard",
+		'total_responses': total_responses,
+		'posts': table_posts,
+		'displayed_responses': len(table_posts),
 	}
 
 	return render(request, 'dashboard/index.html', data)
