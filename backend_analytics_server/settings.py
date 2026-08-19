@@ -127,3 +127,7 @@ MAILERS = {
         "BACKEND": "django.core.mail.backends.console.EmailBackend",
     },
 }
+
+
+#Agregue la constante API_URL con la URL de la API JSONPlaceholder.
+API_URL = "https://jsonplaceholder.typicode.com/posts"

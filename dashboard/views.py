@@ -3,7 +3,27 @@ from django.shortcuts import render
 # Create your views here.
 from django.http import HttpResponse
 
+#Importe el paquete requests y el archivo from django.conf import settings.
+import requests
+from django.conf import settings
+
+
+#Cree un diccionario data con el título del Dashboard.
+#Pase el diccionario como contexto al renderizar la plantilla index.html.
 def index(request):
-	return render(request, 'dashboard/index.html')
+
+	#Realice una solicitud GET a la API de JSONPlaceholder para obtener una lista de publicaciones.
+
+	response =  requests.get(settings.API_URL) #URL DE LA API
+	posts = response.json() #Convierte la respuesta en formato JSON a un objeto de Python (lista de publicaciones)
+
+	#Agregue la entrada total_responses al diccionario data.
+	total_responses = len(posts)
+
+	data = {
+		'title': "Landing Page' Dashboard",
+	}
+
+	return render(request, 'dashboard/index.html', data)
 
 
