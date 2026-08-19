@@ -1,0 +1,20 @@
+{% extends "dashboard/base.html" %}
+
+{% block content %}
+
+  <!-- START - Block content -->
+
+     <div class="flex flex-col flex-1 justify-center w-full">
+
+         <!-- <h1 class="text-center text-6xl font-bold">Landing Page' Dashboard</h1> -->
+         <!--En la plantilla templates/dashboard/index.html, reemplace el título por la referencia a los fragmentos de plantilla header.html y data.html.-->
+
+         {% include "dashboard/partials/header.html" %}
+         {% include "dashboard/content/data.html" %}
+
+         
+     </div>
+
+  <!-- END - Block content -->
+
+{% endblock %}
